@@ -1,0 +1,17 @@
+{
+    "name": "id_server",
+    "version": "1.0.0",
+    "description": "",
+    "type": "module",
+    "scripts": {
+        "start": "nodemon server.js"
+    },
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "express": "",
+        "mongoose": "^7.4.3",
+        "nodemon": "",
+        "uuid": "^9.0.0"
+    }
+}
