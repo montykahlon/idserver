@@ -12,10 +12,9 @@ app.get('/id', (req, res) => {
         if (x.value === null) {
             //! new game without a player waiting
             const _id = uuidv4()
-            res.send(_id);
             addWaiting({ _id: _id })()
                 .then((e) => {
-                    console.log(_id)
+                    console.log("player1", _id)
                     res.send(_id);
                 })
                 .catch((y) => {
@@ -23,7 +22,7 @@ app.get('/id', (req, res) => {
                 })
         } else {
             const { _id } = x.value
-            res.send(_id);
+            res.send("player2", _id);
         }
     }).catch((y) => { console.log(y) })
 });
@@ -36,4 +35,4 @@ app.get('*', (req, res) => {
 const port = 3001;
 app.listen(port, () => {
     console.log(`Server is listening on port ${port}`);
-}); //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
+}); 
