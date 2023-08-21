@@ -2,8 +2,7 @@ import mongoose, { mongo } from "mongoose";
 //mongoose.connect("mongodb+srv://connect4emoji:na!%237gng!nag@cluster0.yidpscv.mongodb.net/connect4").then(x => console.log(x.version))
 const conn = mongoose.connection;
 
-export const addWaiting = (e) => {
-    return async () => {
+export const addWaiting = async () => {
         try {
             await mongoose.connect('mongodb+srv://connect4emoji:na!%237gng!nag@cluster0.yidpscv.mongodb.net/connect4');
             let conn = mongoose.connection
@@ -13,11 +12,9 @@ export const addWaiting = (e) => {
         } catch (error) {
             console.error('Mongoose connection error:', error);
         }
-    }
 }
 
-export const searchWaiting = () => {
-    return async () => {
+export const searchWaiting = async () => {
         try {
             await mongoose.connect('mongodb+srv://connect4emoji:na!%237gng!nag@cluster0.yidpscv.mongodb.net/connect4');
             let conn = mongoose.connection
@@ -27,5 +24,4 @@ export const searchWaiting = () => {
         } catch (error) {
             console.error('Mongoose connection error:', error);
         }
-    }
 }

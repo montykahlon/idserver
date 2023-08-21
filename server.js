@@ -7,12 +7,12 @@ const app = express();
 // Define a route at '/hello'
 app.get('/id', (req, res) => {
     console.log(`got req ${req}`)
-    searchWaiting()().then(x => {
+    searchWaiting().then(x => {
         console.log(x)
         if (x.value === null) {
             //! new game without a player waiting
             const _id = uuidv4()
-            addWaiting({ _id: _id })()
+            addWaiting({ _id: _id })
                 .then((e) => {
                     console.log("player1", _id)
                     res.send(_id);
