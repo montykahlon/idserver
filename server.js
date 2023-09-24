@@ -15,14 +15,14 @@ app.get('/id', (req, res) => {
             addWaiting({ _id: _id })
                 .then((e) => {
                     console.log("player1", _id)
-                    res.send(_id);
+                    res.status(200).send(_id);
                 })
                 .catch((y) => {
                     console.log(y)
                 })
         } else {
             const { _id } = x.value
-            res.send("player2", _id);
+            res.status(200).send(_id);
         }
     }).catch((y) => { console.log(y) })
 });
