@@ -6,9 +6,7 @@ import { addWaiting, searchWaiting } from "./db.js"; // ⇨ '9b1deb4d-3b7d-4bad-
 const app = express();
 // Define a route at '/hello'
 app.get('/id', (req, res) => {
-    console.log(`got req ${req}`)
     searchWaiting().then(x => {
-        console.log(x)
         if (x.value === null) {
             //! new game without a player waiting
             const _id = uuidv4()
